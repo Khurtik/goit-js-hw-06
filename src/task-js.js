@@ -133,7 +133,9 @@ const calculateTotalBalance = users => {
 console.log(calculateTotalBalance(users)); // 20916
 
 const getUsersWithFriend = (users, friendName) => {
-  return users.filter(user => user.friends.includes(friendName));
+  return users
+    .filter(user => user.friends.includes(friendName))
+    .map(user => user.name);
 };
 
 console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
